@@ -24,6 +24,8 @@ const slides = [
 
 console.log(slides);
 
+ let AutoplayVar;
+
 const{createApp}= Vue;
 
 createApp({
@@ -71,12 +73,11 @@ createApp({
                 this.index = this.slides.length - 1;
             }
         },
-         Autoplay(){
-        let AutoplayVar;
-        Autoplay=setInterval(this.nextImag,1000);
-    },
         ClearInterval(){
-            clearInterval(this.AutoplayVar);
+            clearInterval(AutoplayVar);
         }  
-    }
+    },
+    mounted(){
+        AutoplayVar = setInterval(this.nextImag, 1000);
+    } 
 }).mount('#app');
