@@ -30,10 +30,6 @@ createApp({
     data(){
         return {
             index:0,
-            classObject:{
-                active:true,
-                nonActive:""
-            },
            slides: [
             {
             image: "img/01.webp",
@@ -75,19 +71,12 @@ createApp({
                 this.index = this.slides.length - 1;
             }
         },
-        AddClass(){
-         
-            slide.index == this.index
-              ? "this.classObject.active"
-              : "this.classObject.nonActive";
-           
-        },
-        Interval(){
-            setInterval(this.index++,3000);
-        },
+         Autoplay(){
+        let AutoplayVar;
+        Autoplay=setInterval(this.nextImag,1000);
+    },
         ClearInterval(){
-            clearInterval(this.Interval);
-        }
-        
+            clearInterval(this.AutoplayVar);
+        }  
     }
 }).mount('#app');
